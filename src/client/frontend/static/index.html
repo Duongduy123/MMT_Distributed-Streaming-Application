@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Collaboration Client</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Collaboration Client</h1>
+    <div class="conn">
+      <span class="dot dot-off" aria-hidden="true"></span>
+      <span id="conn-status">Not connected — client networking not implemented</span>
+    </div>
+  </header>
+
+  <div id="notifications" class="notice" role="status" aria-live="polite">
+    Scaffold: controls are disabled until the local API exists (Phase 10).
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <section class="panel" aria-labelledby="h-login">
+        <h2 id="h-login">Login</h2>
+        <form id="login-form">
+          <label>Username <input name="username" autocomplete="username" disabled></label>
+          <label>Password <input name="password" type="password" autocomplete="current-password" disabled></label>
+          <button type="submit" disabled>Log in</button>
+        </form>
+        <p class="muted">Login state: <span id="login-state">logged out</span></p>
+      </section>
+
+      <section class="panel" aria-labelledby="h-users">
+        <h2 id="h-users">Online users</h2>
+        <ul id="user-list" class="users"><li class="muted">No data — presence not implemented</li></ul>
+      </section>
+    </aside>
+
+    <main class="chat">
+      <div class="tabs" role="tablist">
+        <button role="tab" class="tab active" data-tab="global" aria-selected="true">Global chat</button>
+        <button role="tab" class="tab" data-tab="direct" aria-selected="false">Direct messages</button>
+      </div>
+
+      <section id="tab-global" class="tabpanel" role="tabpanel">
+        <div class="messages"><p class="muted">No messages — messaging not implemented</p></div>
+        <form class="composer"><input placeholder="Message everyone" disabled><button disabled>Send</button></form>
+      </section>
+
+      <section id="tab-direct" class="tabpanel" role="tabpanel" hidden>
+        <label class="to">To <select disabled><option>— select a user —</option></select></label>
+        <div class="messages"><p class="muted">No messages — messaging not implemented</p></div>
+        <form class="composer"><input placeholder="Private message" disabled><button disabled>Send</button></form>
+      </section>
+
+      <section class="panel files" aria-labelledby="h-files">
+        <h2 id="h-files">File transfer</h2>
+        <form class="file-form">
+          <input type="file" disabled>
+          <button disabled>Offer file</button>
+        </form>
+        <div class="transfer">
+          <span class="muted">No transfers</span>
+          <progress max="100" value="0" aria-label="Transfer progress (placeholder)"></progress>
+          <small class="muted">“Delivered” is shown only after the recipient verifies SHA-256 — never on server ACK.</small>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+# Python caches / environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+
+# Test / coverage outputs
+.pytest_cache/
+.coverage
+htmlcov/
+test-results/
+
+# Logs and runtime data
+*.log
+logs/
+received_files/
+downloads/
+
+# Local configuration (may contain machine-specific IPs or test credentials)
+local_config*.json
+*.local.json
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+congestion_control/
+*.zip

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Server Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Server Dashboard <span class="role">Machine A</span></h1>
+    <span class="badge badge-placeholder">Scaffold — backend not implemented</span>
+  </header>
+
+  <div class="notice" role="status">
+    All values on this page are placeholders. Live data will be served by the dashboard
+    listener once the backend and monitoring endpoints exist (Phase 10).
+  </div>
+
+  <main class="grid">
+    <section class="card" aria-labelledby="h-status">
+      <h2 id="h-status">Service status</h2>
+      <table class="kv">
+        <tr><th>Dashboard</th><td>TCP <code>127.0.0.1:3000</code> (default)</td><td><span class="state state-unknown">not implemented</span></td></tr>
+        <tr><th>Control plane</th><td>TCP <code>0.0.0.0:8080</code> · HTTP/1.1</td><td><span class="state state-unknown">not implemented</span></td></tr>
+        <tr><th>UDP transport</th><td>UDP <code>0.0.0.0:9000</code></td><td><span class="state state-unknown">not implemented</span></td></tr>
+      </table>
+    </section>
+
+    <section class="card" aria-labelledby="h-net">
+      <h2 id="h-net">Network information</h2>
+      <table class="kv">
+        <tr><th>Bind (network)</th><td><code>0.0.0.0</code> <small>wildcard — not a destination</small></td></tr>
+        <tr><th>LAN IPv4 for clients</th><td class="placeholder">— (run <code>python scripts/show_network_info.py</code>)</td></tr>
+      </table>
+    </section>
+
+    <section class="card wide" aria-labelledby="h-clients">
+      <h2 id="h-clients">Active clients &amp; sessions</h2>
+      <table class="list">
+        <thead><tr><th>User</th><th>Session</th><th>TCP peer</th><th>UDP endpoint</th><th>Since</th></tr></thead>
+        <tbody><tr><td colspan="5" class="placeholder">No data — session tracking not implemented (Phase 3)</td></tr></tbody>
+      </table>
+    </section>
+
+    <section class="card wide" aria-labelledby="h-stats">
+      <h2 id="h-stats">Transport statistics (per connection leg)</h2>
+      <table class="list">
+        <thead><tr><th>Leg</th><th>RTT (ms)</th><th>RTO (ms)</th><th>cwnd (B)</th><th>rwnd (B)</th><th>In flight (B)</th><th>Retransmits</th><th>Throughput</th></tr></thead>
+        <tbody><tr><td colspan="8" class="placeholder">No data — transport not implemented (Phases 4–8)</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

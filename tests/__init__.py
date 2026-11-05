@@ -1,0 +1,4 @@
+"""Test suite (stdlib ``unittest``). Run from the project root:
+
+    python -m unittest discover -s tests -t . -v
+"""
